@@ -5,7 +5,8 @@
   "description": "Test Telegraf.js Telegram bot",
   "scripts": {
     "build": "tsc",
-    "start": "node ./lib/index.js"
+    "start": "node ./lib/index.js",
+    "postinstall": "npm run build"
   },
   "repository": "https://github.com/cochegarka/alex98darkbot.git",
   "homepage": "https://github.com/cochegarka/alex98darkbot",
@@ -22,6 +23,8 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
+    "@types/express": "^4.17.3",
+    "express": "^4.17.1",
     "telegraf": "^3.36.0"
   }
 }

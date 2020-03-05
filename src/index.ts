@@ -1,11 +1,36 @@
 import Telegraf from 'telegraf';
 import dotenv from 'dotenv';
+import express from 'express';
 
 dotenv.config();
 
-const bot = new Telegraf(process.env.TELEGRAM_BOT_TOKEN || '');
+const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '';
+const PORT = process.env.PORT || 3000;
+const URL = process.env.URL || '';
+
+const app = express();
+
+const bot = new Telegraf(TELEGRAM_BOT_TOKEN);
+bot.telegram.setWebhook(`${URL}/bot${TELEGRAM_BOT_TOKEN}`);
+app.use(bot.webhookCallback(`/bot${TELEGRAM_BOT_TOKEN}`));
+
 bot.start(ctx => ctx.reply('Welcome'));
 bot.help(ctx => ctx.reply('Send me a sticker'));
 bot.on('sticker', ctx => ctx.reply('👍'));
 bot.hears('hi', ctx => ctx.reply('Hey there'));
-bot.launch();
+
+app.get('/', (_, res) => {
+  res.send(`Девка без руки
+Какого хрена, что же делать
+И я влюбился
+В девку без руки
+Свежий бинт
+Прижимает обрубок к груди
+Он снова кровоточит
+Девка без руки
+Девка без руки`);
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
