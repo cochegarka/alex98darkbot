@@ -20,6 +20,7 @@ bot.on('sticker', ctx => ctx.reply('👍'));
 bot.hears('hi', ctx => ctx.reply('Hey there'));
 
 app.get('/', (_, res) => {
+  res.set('Content-Type', 'text/plain');
   res.send(`Девка без руки
 Какого хрена, что же делать
 И я влюбился
