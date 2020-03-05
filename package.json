@@ -1,0 +1,27 @@
+{
+  "name": "alex98darkbot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Test Telegraf.js Telegram bot",
+  "scripts": {
+    "build": "tsc",
+    "start": "node ./lib/index.js"
+  },
+  "repository": "https://github.com/cochegarka/alex98darkbot.git",
+  "homepage": "https://github.com/cochegarka/alex98darkbot",
+  "bugs": "https://github.com/cochegarka/alex98darkbot/issues",
+  "author": "Anton Zavyalov <megadeathlightsaber@gmail.com>",
+  "license": "ISC",
+  "keywords": [
+    "telegram",
+    "bot",
+    "telegraf"
+  ],
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "telegraf": "^3.36.0"
+  }
+}
