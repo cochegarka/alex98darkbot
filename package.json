@@ -5,7 +5,8 @@
   "description": "Test Telegraf.js Telegram bot",
   "scripts": {
     "build": "tsc",
-    "start": "node lib/index.js"
+    "serve": "node lib/index.js",
+    "start": "npm run build && npm run serve"
   },
   "repository": "https://github.com/cochegarka/alex98darkbot.git",
   "homepage": "https://github.com/cochegarka/alex98darkbot",
