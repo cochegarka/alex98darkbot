@@ -21,15 +21,7 @@ bot.hears('hi', ctx => ctx.reply('Hey there'));
 
 app.get('/', (_, res) => {
   res.set('Content-Type', 'text/plain');
-  res.send(`Девка без руки
-Какого хрена, что же делать
-И я влюбился
-В девку без руки
-Свежий бинт
-Прижимает обрубок к груди
-Он снова кровоточит
-Девка без руки
-Девка без руки`);
+  res.send(`hello, world!`);
 });
 
 app.listen(PORT, () => {
