@@ -21,7 +21,7 @@ bot.hears('hi', ctx => ctx.reply('Hey there'));
 
 app.get('/', (_, res) => {
   res.set('Content-Type', 'text/plain');
-  res.send(`hello, world!`);
+  res.send(`professional it english`);
 });
 
 app.listen(PORT, () => {
