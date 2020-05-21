@@ -21,7 +21,7 @@ bot.hears('hi', ctx => ctx.reply('Hey there'));
 
 app.get('/', (_, res) => {
   res.set('Content-Type', 'text/plain');
-  res.send(`professional it english`);
+  res.send(`cloud technologies`);
 });
 
 app.listen(PORT, () => {
