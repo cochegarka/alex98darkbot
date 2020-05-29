@@ -14,10 +14,7 @@ const bot = new Telegraf(TELEGRAM_BOT_TOKEN);
 bot.telegram.setWebhook(`${URL}/bot${TELEGRAM_BOT_TOKEN}`);
 app.use(bot.webhookCallback(`/bot${TELEGRAM_BOT_TOKEN}`));
 
-bot.start(ctx => ctx.reply('Welcome'));
-bot.help(ctx => ctx.reply('Send me a sticker!'));
-bot.on('sticker', ctx => ctx.reply('👍'));
-bot.hears('hi', ctx => ctx.reply('Hey there'));
+bot.command('plain', ctx => ctx.reply(ctx.message?.text || ''));
 
 app.get('/', (_, res) => {
   res.set('Content-Type', 'text/plain');
