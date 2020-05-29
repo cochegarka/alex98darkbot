@@ -15,7 +15,7 @@ bot.telegram.setWebhook(`${URL}/bot${TELEGRAM_BOT_TOKEN}`);
 app.use(bot.webhookCallback(`/bot${TELEGRAM_BOT_TOKEN}`));
 
 bot.command('plain', async ctx => {
-  ctx.reply(ctx.editedMessage?.text || '');
+  await ctx.reply(ctx.editedMessage?.text || '');
 });
 
 app.get('/', (_, res) => {
