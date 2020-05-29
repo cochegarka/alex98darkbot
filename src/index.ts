@@ -14,7 +14,9 @@ const bot = new Telegraf(TELEGRAM_BOT_TOKEN);
 bot.telegram.setWebhook(`${URL}/bot${TELEGRAM_BOT_TOKEN}`);
 app.use(bot.webhookCallback(`/bot${TELEGRAM_BOT_TOKEN}`));
 
-bot.command('plain', ctx => ctx.reply(ctx.message?.text || ''));
+bot.command('plain', async ctx => {
+  ctx.reply(ctx.editedMessage?.text || '');
+});
 
 app.get('/', (_, res) => {
   res.set('Content-Type', 'text/plain');
