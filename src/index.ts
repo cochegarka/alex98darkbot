@@ -1,6 +1,7 @@
 import Telegraf from 'telegraf';
 import dotenv from 'dotenv';
 import express from 'express';
+import { PlainTextEstimation } from './cryptanalysis/plaintext';
 
 dotenv.config();
 
@@ -15,7 +16,10 @@ bot.telegram.setWebhook(`${URL}/bot${TELEGRAM_BOT_TOKEN}`);
 app.use(bot.webhookCallback(`/bot${TELEGRAM_BOT_TOKEN}`));
 
 bot.command('plain', async ctx => {
-  await ctx.reply(ctx.editedMessage?.text || '');
+  const text = (ctx.message?.text || '').substr('/plain'.length);
+  const estimation = await new PlainTextEstimation(text).measure();
+
+  await ctx.reply(estimation.toString());
 });
 
 app.get('/', (_, res) => {
