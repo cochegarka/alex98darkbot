@@ -68,7 +68,7 @@ export class PlainTextEstimation {
   }
 
   async measure(): Promise<number> {
-    (const frequencyMeasure = this.frequency.measure;
+    const frequencyMeasure = this.frequency.measure;
 
     const spellErrorsCount = (await checkText(this.text)).length;
     const wordsCount = this.text.split(' ').filter(v => v.length > 0).length;
