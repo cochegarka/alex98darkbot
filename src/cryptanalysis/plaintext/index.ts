@@ -73,7 +73,7 @@ export class PlainTextEstimation {
     const spellErrorsCount = (await checkText(this.text)).length;
     const wordsCount = this.text.split(' ').filter(v => v.length > 0).length;
 
-    const spellErrorsProbability = wordsCount == 0 ? 0 : spellErrorsCount / wordsCount;
+    const spellErrorsProbability = wordsCount == 0 ? 0 : (wordsCount - spellErrorsCount) / wordsCount;
 
     return frequencyMeasure + spellErrorsProbability;
   }
