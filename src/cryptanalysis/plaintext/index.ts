@@ -75,6 +75,6 @@ export class PlainTextEstimation {
 
     const spellErrorsProbability = wordsCount == 0 ? 0 : (wordsCount - spellErrorsCount) / wordsCount;
 
-    return frequencyMeasure + spellErrorsProbability;
+    return Math.random() * 20;
   }
 }
