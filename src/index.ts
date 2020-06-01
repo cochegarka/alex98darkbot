@@ -29,7 +29,7 @@ bot.command('plain', async ctx => {
     opinion = 'Скорее всего написан человеком, но есть небольшие сомнения';
   } else if (estimation <= 10) {
     opinion = 'Мне кажется, текст достаточно человеконечитаемый';
-  } else if (isNaN(estimation)) {
+  } else {
     opinion = 'По-моему, текст ДАННЫЕ УДАЛЕНЫ!';
   }
 
